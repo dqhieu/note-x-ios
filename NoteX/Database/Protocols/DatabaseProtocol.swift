@@ -22,6 +22,8 @@ protocol DatabaseProtocol {
     
     func delete(_ object: Value)
     
+    func delete(_ objects: [Value])
+    
     func deleteAll()
     
 }
