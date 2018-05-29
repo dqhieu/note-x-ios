@@ -68,7 +68,11 @@ public class Note: Object {
     }
     
     public func getOverview() -> String? {
-        return _content.components(separatedBy: "\n").dropFirst().joined(separator: " ")
+        let overview = _content.components(separatedBy: "\n").dropFirst().joined(separator: " ")
+        if overview.isBlank() {
+            return "No additional text"
+        }
+        return overview
     }
     
 }

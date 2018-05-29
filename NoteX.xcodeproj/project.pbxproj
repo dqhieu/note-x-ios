@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		716F29B620BDB5A60001587B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716F29B520BDB5A60001587B /* StringExtension.swift */; };
 		71A2CC0020BC682A00B64F72 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A2CBFF20BC682A00B64F72 /* DataManager.swift */; };
 		71A2CC0820BC75DB00B64F72 /* AppComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A2CC0720BC75DB00B64F72 /* AppComponents.swift */; };
 		71A2CC0F20BC76B700B64F72 /* NoteListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A2CC0E20BC76B700B64F72 /* NoteListProtocol.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		5F3E68AB56B33951342EB5F4 /* Pods-NoteXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteXTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoteXTests/Pods-NoteXTests.release.xcconfig"; sourceTree = "<group>"; };
 		705E0B7D15F8BC286272487C /* Pods-NoteXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteXTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoteXTests/Pods-NoteXTests.debug.xcconfig"; sourceTree = "<group>"; };
+		716F29B520BDB5A60001587B /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		71A2CBFF20BC682A00B64F72 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		71A2CC0720BC75DB00B64F72 /* AppComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponents.swift; sourceTree = "<group>"; };
 		71A2CC0E20BC76B700B64F72 /* NoteListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListProtocol.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				71A2CC1C20BC7C7A00B64F72 /* DateExtension.swift */,
+				716F29B520BDB5A60001587B /* StringExtension.swift */,
 				71A2CC2420BC7F1000B64F72 /* UIImageExtension.swift */,
 			);
 			path = Extensions;
@@ -660,6 +663,7 @@
 				71A2CC0F20BC76B700B64F72 /* NoteListProtocol.swift in Sources */,
 				71A2CC1720BC794600B64F72 /* NoteListViewController.swift in Sources */,
 				71C3867920B855210058E0FA /* AttachmentDataManger.swift in Sources */,
+				716F29B620BDB5A60001587B /* StringExtension.swift in Sources */,
 				71A2CC3820BC8D6C00B64F72 /* NoteDetailWireframe.swift in Sources */,
 				71C3867020B84FAA0058E0FA /* NotebookDataManagerProtocol.swift in Sources */,
 				71A2CC3E20BCF5DD00B64F72 /* NoteDetailViewDelegate.swift in Sources */,
