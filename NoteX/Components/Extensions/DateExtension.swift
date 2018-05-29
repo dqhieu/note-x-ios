@@ -24,4 +24,30 @@ public extension Date {
         return dateFormatter.string(from: self)
     }
     
+    public func timeAgo() -> String {
+        let timeInterval = Date().timeIntervalSince(self)
+        if timeInterval < 60 {
+            return "Just now"
+        }
+        if timeInterval < 2 * 60 {
+            return "A minute ago"
+        }
+        if timeInterval < 60 * 60 {
+            return "\(Int(timeInterval / 60)) minutes ago"
+        }
+        if timeInterval < 2 * 60 * 60 {
+            return "An hour ago"
+        }
+        if timeInterval < 24 * 60 * 60 {
+            return "\(Int(timeInterval / (60 * 60))) hours ago"
+        }
+        if timeInterval < 2 * 24 * 60 * 60 {
+            return "Yesterday"
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM, yyyy"
+        dateFormatter.locale = Locale.current
+        return dateFormatter.string(from: self)
+    }
+    
 }

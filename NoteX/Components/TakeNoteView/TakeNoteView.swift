@@ -17,12 +17,12 @@ class TakeNoteView: BaseUIView {
         return view
     }()
     
-    fileprivate var _btnTakeNote: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Take a note...", for: .normal)
-        button.setTitleColor(UIColor.lightGray, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
-        return button
+    fileprivate var _lblTakeNote: UILabel = {
+        let label = UILabel()
+        label.text = "Take a note..."
+        label.font = UIFont.systemFont(ofSize: 24)
+        label.textColor = UIColor.darkGray
+        return label
     }()
     
     override init(frame: CGRect) {
@@ -35,9 +35,10 @@ class TakeNoteView: BaseUIView {
         layer.shadowOpacity = 0.5
         backgroundColor = UIColor.white
         
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
+        
         addSubview(_containerView)
-        _containerView.addSubview(_btnTakeNote)
-        _btnTakeNote.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        _containerView.addSubview(_lblTakeNote)
         
         setupLayouts()
     }
@@ -49,10 +50,10 @@ class TakeNoteView: BaseUIView {
     override func setupLayouts() {
         super.setupLayouts()
         _containerView.pin.all()
-        _btnTakeNote.pin.top(10).height(30).left(10).sizeToFit(.height)
+        _lblTakeNote.pin.top(10).height(30).left(10).sizeToFit(.height)
     }
     
-    @objc private func didTapButton() {
+    @objc private func didTap() {
         delegate?.takeNoteViewDidTap()
     }
 }

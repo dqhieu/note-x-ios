@@ -46,16 +46,17 @@ class NoteDetailPresenter: NoteDetailPresenterProtocol {
     func didTapBack() {
         _pendingUpdateContentWorkItem?.cancel()
         
-        if _newContent != _note.content {
+        if _newContent.isBlank() {
+            didTapDeleteNote(isUndoEnabled: false)
+        } else if _newContent != _note.content {
             interactor?.updateNoteContentById(_note.id, content: _newContent)
             view?.delegate?.didUpdateNoteWithId(_note.id)
-        } else if _newContent == "" {
-            interactor?.deleteNoteById(_note.id)
         }
     }
     
-    func didTapDeleteNote() {
-        view?.delegate?.willDeleteNoteWithId(_note.id)
+    func didTapDeleteNote(isUndoEnabled: Bool) {
+        let note = Note(value: _note)
+        view?.delegate?.willDeleteNote(note, isUndoEnabled: isUndoEnabled)
         interactor?.deleteNoteById(_note.id)
         view?.dismiss(completion: nil)
     }

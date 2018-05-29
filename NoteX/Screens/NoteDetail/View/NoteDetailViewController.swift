@@ -49,6 +49,9 @@ class NoteDetailViewController: BaseUIViewController, NoteDetailViewProtocol {
     func loadNote(_ note: Note) {
         self.title = Date().toStringDate()
         _txtContent.text = note.content
+        if note.content == "" {
+            _txtContent.becomeFirstResponder()
+        }
     }
     
     override func onKeyboardWillShow(notification: NSNotification) {
@@ -57,18 +60,12 @@ class NoteDetailViewController: BaseUIViewController, NoteDetailViewProtocol {
         guard let userInfo = notification.userInfo,
             let keyboardFrame: NSValue = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue else { return }
         let _keyboardHeight = keyboardFrame.cgRectValue.height
-        
-        UIView.animate(withDuration: 0.2) { [weak self] in
-            self?._txtContent.pin.all().marginBottom(_keyboardHeight)
-        }
+        _txtContent.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: _keyboardHeight, right: 0)
     }
     
     override func onKeyboardWillHide() {
         super.onKeyboardWillHide()
-        
-        UIView.animate(withDuration: 0.2) { [weak self] in
-            self?.setupLayouts()
-        }
+        _txtContent.contentInset = UIEdgeInsets()
     }
     
     override func didTapBack() {
@@ -77,7 +74,7 @@ class NoteDetailViewController: BaseUIViewController, NoteDetailViewProtocol {
     }
     
     @objc func didTapDeleteNote() {
-        presenter?.didTapDeleteNote()
+        presenter?.didTapDeleteNote(isUndoEnabled: true)
     }
 }
 

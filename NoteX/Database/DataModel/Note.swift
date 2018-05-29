@@ -59,6 +59,10 @@ public class Note: Object {
         super.init()
     }
     
+    public override init(value: Any) {
+        super.init(value: value)
+    }
+    
     required public init(value: Any, schema: RLMSchema) {
         super.init(value: value, schema: schema)
     }
@@ -68,7 +72,11 @@ public class Note: Object {
     }
     
     public func getOverview() -> String? {
-        return _content.components(separatedBy: "\n").dropFirst().joined(separator: " ")
+        let overview = _content.components(separatedBy: "\n").dropFirst().joined(separator: " ")
+        if overview.isBlank() {
+            return "No additional text"
+        }
+        return overview
     }
     
 }
