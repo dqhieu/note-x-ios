@@ -50,6 +50,4 @@ protocol NoteListInteractorInputProtocol: class {
 
 protocol NoteListInteractorOutputProtocol: class {
     
-    
-    
 }

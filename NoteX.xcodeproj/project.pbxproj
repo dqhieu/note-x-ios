@@ -28,6 +28,7 @@
 		71A2CC3820BC8D6C00B64F72 /* NoteDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A2CC3720BC8D6C00B64F72 /* NoteDetailWireframe.swift */; };
 		71A2CC3A20BCEF2E00B64F72 /* BaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A2CC3920BCEF2E00B64F72 /* BaseViewProtocol.swift */; };
 		71A2CC3E20BCF5DD00B64F72 /* NoteDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A2CC3D20BCF5DD00B64F72 /* NoteDetailViewDelegate.swift */; };
+		71A2CC4020BCFD6D00B64F72 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 71A2CC3F20BCFD6C00B64F72 /* .swiftlint.yml */; };
 		71C3866520B7E7D20058E0FA /* Notebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C3866420B7E7D20058E0FA /* Notebook.swift */; };
 		71C3866720B7E81E0058E0FA /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C3866620B7E81E0058E0FA /* Note.swift */; };
 		71C3866920B7E8C10058E0FA /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C3866820B7E8C10058E0FA /* Attachment.swift */; };
@@ -80,6 +81,7 @@
 		71A2CC3720BC8D6C00B64F72 /* NoteDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailWireframe.swift; sourceTree = "<group>"; };
 		71A2CC3920BCEF2E00B64F72 /* BaseViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewProtocol.swift; sourceTree = "<group>"; };
 		71A2CC3D20BCF5DD00B64F72 /* NoteDetailViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailViewDelegate.swift; sourceTree = "<group>"; };
+		71A2CC3F20BCFD6C00B64F72 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		71C3866420B7E7D20058E0FA /* Notebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notebook.swift; sourceTree = "<group>"; };
 		71C3866620B7E81E0058E0FA /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		71C3866820B7E8C10058E0FA /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 		71F1DB5120A5ECE30046C481 = {
 			isa = PBXGroup;
 			children = (
+				71A2CC3F20BCFD6C00B64F72 /* .swiftlint.yml */,
 				71F1DB5C20A5ECE40046C481 /* NoteX */,
 				71F1DB7120A5ECE40046C481 /* NoteXTests */,
 				71F1DB5B20A5ECE40046C481 /* Products */,
@@ -420,6 +423,7 @@
 				71F1DB5820A5ECE30046C481 /* Resources */,
 				F8646932B01761039D84D2C7 /* [CP] Embed Pods Frameworks */,
 				2BF1DC950DDD6BFAC249A3FC /* [CP] Copy Pods Resources */,
+				71A2CC4120BCFD8200B64F72 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -496,6 +500,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71A2CC4020BCFD6D00B64F72 /* .swiftlint.yml in Resources */,
 				71F1DB6820A5ECE40046C481 /* LaunchScreen.storyboard in Resources */,
 				71F1DB6520A5ECE40046C481 /* Assets.xcassets in Resources */,
 			);
@@ -540,6 +545,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NoteX/Pods-NoteX-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		71A2CC4120BCFD8200B64F72 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		BA022C6175A85CFDBA62C16C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -53,6 +53,4 @@ protocol NoteDetailInteractorInputProtocol: class {
 
 protocol NoteDetailInteractorOutputProtocol: class {
     
-    
-    
 }
