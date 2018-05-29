@@ -67,7 +67,7 @@ class NoteCell: UITableViewCell {
     }
     
     private func setupShadow() {
-        let shadowSize : CGFloat = 4.0
+        let shadowSize: CGFloat = 4.0
         let shadowPath = UIBezierPath(rect: CGRect(x: -shadowSize / 2,
                                                    y: -shadowSize / 2,
                                                    width: _containerView.frame.size.width + shadowSize,
@@ -78,6 +78,7 @@ class NoteCell: UITableViewCell {
         _containerView.layer.shadowOpacity = 0.5
         _containerView.layer.cornerRadius = 5
         _containerView.layer.shadowPath = shadowPath.cgPath
+        _containerView.clipsToBounds = false
     }
     
     override func layoutSubviews() {

@@ -21,6 +21,7 @@ class NoteListViewController: BaseUIViewController, NoteListViewProtocol {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.backgroundColor = UIColor.lightGray
         tableView.register(NoteCell.self, forCellReuseIdentifier: NoteCell.reusableIdentifier)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         return tableView
     }()
     
@@ -54,8 +55,8 @@ class NoteListViewController: BaseUIViewController, NoteListViewProtocol {
     
     override func setupLayouts() {
         super.setupLayouts()
-        _noteTableView.pin.all()
         _takeNoteView.pin.bottom().horizontally().height(50 + view.pin.safeArea.bottom)
+        _noteTableView.pin.above(of: _takeNoteView).horizontally().top()
     }
     
     func updateNoteList(_ notes: [Note]) {
