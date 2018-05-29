@@ -28,7 +28,7 @@ protocol NoteDetailPresenterProtocol: class {
     
     func didTapBack()
     
-    func didTapDeleteNote()
+    func didTapDeleteNote(isUndoEnabled: Bool)
 }
 
 protocol NoteDetailWireframeProtocol: class {

@@ -74,7 +74,7 @@ class NoteDetailViewController: BaseUIViewController, NoteDetailViewProtocol {
     }
     
     @objc func didTapDeleteNote() {
-        presenter?.didTapDeleteNote()
+        presenter?.didTapDeleteNote(isUndoEnabled: true)
     }
 }
 

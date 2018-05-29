@@ -128,10 +128,12 @@ extension NoteListViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension NoteListViewController: NoteDetailViewDelegate {
     
-    func willDeleteNote(_ note: Note) {
+    func willDeleteNote(_ note: Note, isUndoEnabled: Bool) {
         _notes = _notes.filter({ $0.id != note.id })
         _noteTableView.reloadData()
-        showMessageDeletedNote(note)
+        if isUndoEnabled {
+            showMessageDeletedNote(note)
+        }
     }
     
     func didUpdateNoteWithId(_ id: String) {
