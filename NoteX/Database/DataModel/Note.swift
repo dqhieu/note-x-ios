@@ -63,4 +63,12 @@ public class Note: Object {
         super.init(value: value, schema: schema)
     }
     
+    public func getTitle() -> String? {
+        return _content.components(separatedBy: "\n").first
+    }
+    
+    public func getOverview() -> String? {
+        return _content.components(separatedBy: "\n").dropFirst().joined(separator: " ")
+    }
+    
 }
