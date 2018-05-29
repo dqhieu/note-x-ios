@@ -17,3 +17,18 @@ NoteX iOS
 - No save button, everything entered will be automatically save (could be debounce for 1 seconds or more)
 
 <img src="https://user-images.githubusercontent.com/4214509/39516344-de1085aa-4e26-11e8-8e31-72b413707387.png" width="500"> | <img src="https://www.upanhtocdo.com/images/2018/05/29/Screen-Shot-2018-05-29-at-9.48.11-PM.png" width="300">
+
+# 0.0.2
+
+## Fix
+- [x] List page: the last item is overlapped by "Take a note" bar.
+- [x] Cannot open new note page when tap outside of "Take a note" text.
+- [x] Should auto open keyboard when open new note page
+- [x] Text is overlapped by keyboard
+
+# Add
+- [x] List page: Use "No additional text" if description is empty
+- [x] List page: show relative date time format.
+- [x] Show "Deleted {note title} [Undo]" message after delete note
+- [x] Auto scroll list to top after creating/editing note
+- [x] Prevent user from creating note with all whitespace/newlines characters
