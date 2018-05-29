@@ -95,7 +95,7 @@ class NoteCell: UITableViewCell {
     
     func setup(note: Note) {
         _lblTitle.text = note.getTitle()
-        _lblCreated.text = note.createdAt.toStringShortDate()
+        _lblCreated.text = note.updatedAt.timeAgo()
         _lblOverview.text = note.getOverview()
     }
 }
