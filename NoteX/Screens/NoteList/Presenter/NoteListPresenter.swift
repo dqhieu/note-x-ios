@@ -35,6 +35,12 @@ class NoteListPresenter: NoteListPresenterProtocol {
         view?.updateNoteInList(note)
     }
     
+    func didTapUndoDeleteNote(_ note: Note) {
+        interactor?.addNote(note)
+        guard let notes = interactor?.getAllNotes() else { return }
+        view?.updateNoteList(notes)
+    }
+    
 }
 
 extension NoteListPresenter: NoteListInteractorOutputProtocol {

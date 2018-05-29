@@ -59,6 +59,10 @@ public class Note: Object {
         super.init()
     }
     
+    public override init(value: Any) {
+        super.init(value: value)
+    }
+    
     required public init(value: Any, schema: RLMSchema) {
         super.init(value: value, schema: schema)
     }

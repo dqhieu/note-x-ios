@@ -26,4 +26,8 @@ class NoteListInteractor: NoteListInteractorInputProtocol {
         return _dataManager.getNoteById(id)
     }
     
+    func addNote(_ note: Note) {
+        _dataManager.addNote(note)
+    }
+    
 }

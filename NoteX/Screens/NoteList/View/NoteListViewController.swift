@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialSnackbar
 
 class NoteListViewController: BaseUIViewController, NoteListViewProtocol {
     
@@ -33,6 +34,11 @@ class NoteListViewController: BaseUIViewController, NoteListViewProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = "Notes"
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        MDCSnackbarManager.dismissAndCallCompletionBlocks(withCategory: nil)
     }
     
     override func viewDidLoad() {
@@ -70,6 +76,23 @@ class NoteListViewController: BaseUIViewController, NoteListViewProtocol {
         updateNoteList(_notes)
     }
     
+    func showMessageDeletedNote(_ note: Note) {
+        var title = note.getTitle() ?? ""
+        if title.count > 50 {
+            title = title.prefix(50) + "..."
+        }
+        let message = MDCSnackbarMessage()
+        message.text = "Deleted \(title)"
+        let action = MDCSnackbarMessageAction()
+        action.handler = {
+            self.presenter?.didTapUndoDeleteNote(note)
+        }
+        action.title = "Undo"
+        message.action = action
+        MDCSnackbarManager.setBottomOffset(50 + view.pin.safeArea.bottom)
+        MDCSnackbarManager.show(message)
+    }
+    
 }
 
 extension NoteListViewController: TakeNoteViewDelegate {
@@ -104,9 +127,10 @@ extension NoteListViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension NoteListViewController: NoteDetailViewDelegate {
     
-    func willDeleteNoteWithId(_ id: String) {
-        _notes = _notes.filter({ $0.id != id })
+    func willDeleteNote(_ note: Note) {
+        _notes = _notes.filter({ $0.id != note.id })
         _noteTableView.reloadData()
+        showMessageDeletedNote(note)
     }
     
     func didUpdateNoteWithId(_ id: String) {

@@ -7,6 +7,7 @@ target 'NoteX' do
 
   pod 'PinLayout'
   pod 'RealmSwift'
+  pod 'MaterialComponents/Snackbar'
 
   # Pods for NoteX
 

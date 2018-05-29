@@ -55,7 +55,8 @@ class NoteDetailPresenter: NoteDetailPresenterProtocol {
     }
     
     func didTapDeleteNote() {
-        view?.delegate?.willDeleteNoteWithId(_note.id)
+        let note = Note(value: _note)
+        view?.delegate?.willDeleteNote(note)
         interactor?.deleteNoteById(_note.id)
         view?.dismiss(completion: nil)
     }

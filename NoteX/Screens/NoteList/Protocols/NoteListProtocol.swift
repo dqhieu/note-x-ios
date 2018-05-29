@@ -29,6 +29,8 @@ protocol NoteListPresenterProtocol: class {
     func didTapTakeNote()
     
     func didUpdateNoteWithId(_ id: String)
+    
+    func didTapUndoDeleteNote(_ note: Note)
 }
 
 protocol NoteListWireframeProtocol: class {
@@ -46,6 +48,9 @@ protocol NoteListInteractorInputProtocol: class {
     func getAllNotes() -> [Note]
     
     func getNoteById(_ id: String) -> Note?
+    
+    func addNote(_ note: Note)
+    
 }
 
 protocol NoteListInteractorOutputProtocol: class {

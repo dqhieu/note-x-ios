@@ -10,7 +10,7 @@ import Foundation
 
 protocol NoteDetailViewDelegate: class {
     
-    func willDeleteNoteWithId(_ id: String)
+    func willDeleteNote(_ note: Note)
     
     func didUpdateNoteWithId(_ id: String)
     

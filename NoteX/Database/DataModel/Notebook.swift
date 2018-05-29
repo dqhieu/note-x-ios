@@ -47,6 +47,10 @@ public class Notebook: Object {
         super.init(value: value, schema: schema)
     }
     
+    public override init(value: Any) {
+        super.init(value: value)
+    }
+    
     required public init() {
         super.init()
     }
