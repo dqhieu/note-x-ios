@@ -49,6 +49,9 @@ class NoteDetailViewController: BaseUIViewController, NoteDetailViewProtocol {
     func loadNote(_ note: Note) {
         self.title = Date().toStringDate()
         _txtContent.text = note.content
+        if note.content == "" {
+            _txtContent.becomeFirstResponder()
+        }
     }
     
     override func onKeyboardWillShow(notification: NSNotification) {
