@@ -68,6 +68,7 @@ class NoteListViewController: BaseUIViewController, NoteListViewProtocol {
     func updateNoteList(_ notes: [Note]) {
         _notes = notes.sorted(by: { $0.updatedAt > $1.updatedAt })
         _noteTableView.reloadData()
+        _noteTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .bottom, animated: true)
     }
     
     func updateNoteInList(_ note: Note) {
