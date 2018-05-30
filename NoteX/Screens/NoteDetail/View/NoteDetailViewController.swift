@@ -22,8 +22,8 @@ class NoteDetailViewController: BaseUIViewController, NoteDetailViewProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(didTapBack))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Delete", style: UIBarButtonItemStyle.plain, target: self, action: #selector(didTapDeleteNote))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< \(LocalizedString.Back)", style: UIBarButtonItemStyle.plain, target: self, action: #selector(didTapBack))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: LocalizedString.Delete, style: UIBarButtonItemStyle.plain, target: self, action: #selector(didTapDeleteNote))
     }
     
     override func viewDidLoad() {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7164CCF720BE63900016B442 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7164CCF920BE63900016B442 /* Localizable.strings */; };
+		7164CCFC20BE690F0016B442 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7164CCFB20BE690F0016B442 /* LocalizedString.swift */; };
 		716F29B620BDB5A60001587B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716F29B520BDB5A60001587B /* StringExtension.swift */; };
 		71A2CC0020BC682A00B64F72 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A2CBFF20BC682A00B64F72 /* DataManager.swift */; };
 		71A2CC0820BC75DB00B64F72 /* AppComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A2CC0720BC75DB00B64F72 /* AppComponents.swift */; };
@@ -61,6 +63,10 @@
 /* Begin PBXFileReference section */
 		5F3E68AB56B33951342EB5F4 /* Pods-NoteXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteXTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoteXTests/Pods-NoteXTests.release.xcconfig"; sourceTree = "<group>"; };
 		705E0B7D15F8BC286272487C /* Pods-NoteXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteXTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoteXTests/Pods-NoteXTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7164CCF420BE634C0016B442 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7164CCF820BE63900016B442 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7164CCFA20BE63930016B442 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7164CCFB20BE690F0016B442 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		716F29B520BDB5A60001587B /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		71A2CBFF20BC682A00B64F72 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		71A2CC0720BC75DB00B64F72 /* AppComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponents.swift; sourceTree = "<group>"; };
@@ -173,6 +179,8 @@
 			children = (
 				71F1DB6420A5ECE40046C481 /* Assets.xcassets */,
 				71F1DB6620A5ECE40046C481 /* LaunchScreen.storyboard */,
+				7164CCF920BE63900016B442 /* Localizable.strings */,
+				7164CCFB20BE690F0016B442 /* LocalizedString.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -486,6 +494,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = 71F1DB5120A5ECE30046C481;
 			productRefGroup = 71F1DB5B20A5ECE40046C481 /* Products */;
@@ -504,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71A2CC4020BCFD6D00B64F72 /* .swiftlint.yml in Resources */,
+				7164CCF720BE63900016B442 /* Localizable.strings in Resources */,
 				71F1DB6820A5ECE40046C481 /* LaunchScreen.storyboard in Resources */,
 				71F1DB6520A5ECE40046C481 /* Assets.xcassets in Resources */,
 			);
@@ -670,6 +680,7 @@
 				71A2CC1720BC794600B64F72 /* NoteListViewController.swift in Sources */,
 				71C3867920B855210058E0FA /* AttachmentDataManger.swift in Sources */,
 				716F29B620BDB5A60001587B /* StringExtension.swift in Sources */,
+				7164CCFC20BE690F0016B442 /* LocalizedString.swift in Sources */,
 				71A2CC3820BC8D6C00B64F72 /* NoteDetailWireframe.swift in Sources */,
 				71C3867020B84FAA0058E0FA /* NotebookDataManagerProtocol.swift in Sources */,
 				71A2CC3E20BCF5DD00B64F72 /* NoteDetailViewDelegate.swift in Sources */,
@@ -704,10 +715,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7164CCF920BE63900016B442 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7164CCF820BE63900016B442 /* en */,
+				7164CCFA20BE63930016B442 /* vi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		71F1DB6620A5ECE40046C481 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				71F1DB6720A5ECE40046C481 /* Base */,
+				7164CCF420BE634C0016B442 /* vi */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -719,6 +740,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -776,6 +798,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  NoteX
+
+  Created by Dinh Quang Hieu on 5/30/18.
+  Copyright © 2018 Dinh Quang Hieu. All rights reserved.
+*/
+
+"Take a note..." = "Tạo ghi chú...";
+"Notes" = "Tất cả ghi chú";
+"Back" = "Quay lại";
+"Delete" = "Xóa";
+"No additional text" = "Không có mô tả";
+"Just now" = "Vừa mới đây";
+"A minute ago" = "1 phút trước";
+"minutes ago" = "phút trước";
+"An hour ago" = "1 giờ trước";
+"hours ago" = "giờ trước";
+"Yesterday" = "Hôm qua";
+"Undo" = "Hoàn tác";
+"Deleted" = "Đã xóa";

@@ -74,7 +74,7 @@ public class Note: Object {
     public func getOverview() -> String? {
         let overview = _content.components(separatedBy: "\n").dropFirst().joined(separator: " ")
         if overview.isBlank() {
-            return "No additional text"
+            return LocalizedString.No_Additional_Text
         }
         return overview
     }
