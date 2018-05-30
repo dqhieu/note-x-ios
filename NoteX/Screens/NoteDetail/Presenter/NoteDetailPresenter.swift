@@ -56,7 +56,8 @@ class NoteDetailPresenter: NoteDetailPresenterProtocol {
     
     func didTapDeleteNote(isUndoEnabled: Bool) {
         let note = Note(value: _note)
-        view?.delegate?.willDeleteNote(note, isUndoEnabled: isUndoEnabled)
+        let undoEnabled = _newContent.isBlank() ? false : true
+        view?.delegate?.willDeleteNote(note, isUndoEnabled: undoEnabled)
         interactor?.deleteNoteById(_note.id)
         view?.dismiss(completion: nil)
     }
