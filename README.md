@@ -1,5 +1,14 @@
 NoteX iOS
 
+---
+
+## Release
+- [0.0.1](#001)
+- [0.0.2](#002)
+- [0.0.3](#003)
+
+---
+
 # 0.0.1
 
 ## List notes (Home page)
@@ -18,6 +27,8 @@ NoteX iOS
 
 <img src="https://user-images.githubusercontent.com/4214509/39516344-de1085aa-4e26-11e8-8e31-72b413707387.png" width="500"> | <img src="https://www.upanhtocdo.com/images/2018/05/29/Screen-Shot-2018-05-29-at-9.48.11-PM.png" width="300">
 
+---
+
 # 0.0.2
 
 ## Fix
@@ -32,3 +43,14 @@ NoteX iOS
 - [x] Show "Deleted {note title} [Undo]" message after delete note
 - [x] Auto scroll list to top after creating/editing note
 - [x] Prevent user from creating note with all whitespace/newlines characters
+
+---
+
+# 0.0.3
+
+## Fix
+- [x] App crash if there is no note
+- [x] App show "Deleted {nil} [Undo]" if delete a note after creating less than 3 seconds
+
+## Add
+- [x] Localization (multi-language): now supporting English and Vietnamese
