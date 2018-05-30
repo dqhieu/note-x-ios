@@ -19,7 +19,7 @@ class TakeNoteView: BaseUIView {
     
     fileprivate var _lblTakeNote: UILabel = {
         let label = UILabel()
-        label.text = "Take a note..."
+        label.text = LocalizedString.Take_A_Note
         label.font = UIFont.systemFont(ofSize: 24)
         label.textColor = UIColor.darkGray
         return label

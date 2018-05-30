@@ -27,22 +27,22 @@ public extension Date {
     public func timeAgo() -> String {
         let timeInterval = Date().timeIntervalSince(self)
         if timeInterval < 60 {
-            return "Just now"
+            return LocalizedString.Just_Now
         }
         if timeInterval < 2 * 60 {
-            return "A minute ago"
+            return LocalizedString.A_Minute_Ago
         }
         if timeInterval < 60 * 60 {
-            return "\(Int(timeInterval / 60)) minutes ago"
+            return "\(Int(timeInterval / 60)) \(LocalizedString.Minutes_Ago)"
         }
         if timeInterval < 2 * 60 * 60 {
-            return "An hour ago"
+            return LocalizedString.An_Hour_Ago
         }
         if timeInterval < 24 * 60 * 60 {
-            return "\(Int(timeInterval / (60 * 60))) hours ago"
+            return "\(Int(timeInterval / (60 * 60))) \(LocalizedString.Hours_Ago)"
         }
         if timeInterval < 2 * 24 * 60 * 60 {
-            return "Yesterday"
+            return LocalizedString.Yesterday
         }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM, yyyy"

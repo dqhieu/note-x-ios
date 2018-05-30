@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  NoteX
+
+  Created by Dinh Quang Hieu on 5/30/18.
+  Copyright © 2018 Dinh Quang Hieu. All rights reserved.
+*/
+
+"Take a note..." = "Take a note...";
+"Notes" = "Notes";
+"Back" = "Back";
+"Delete" = "Delete";
+"No additional text" = "No additional text";
+"Just now" = "Just now";
+"A minute ago" = "A minute ago";
+"minutes ago" = "minutes ago";
+"An hour ago" = "An hour ago";
+"hours ago" = "hours ago";
+"Yesterday" = "Yesterday";
+"Undo" = "Undo";
+"Deleted" = "Deleted";

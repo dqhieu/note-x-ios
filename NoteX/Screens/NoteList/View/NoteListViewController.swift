@@ -33,7 +33,7 @@ class NoteListViewController: BaseUIViewController, NoteListViewProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.title = "Notes"
+        self.title = LocalizedString.Notes
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -68,7 +68,9 @@ class NoteListViewController: BaseUIViewController, NoteListViewProtocol {
     func updateNoteList(_ notes: [Note]) {
         _notes = notes.sorted(by: { $0.updatedAt > $1.updatedAt })
         _noteTableView.reloadData()
-        _noteTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .bottom, animated: true)
+        if _notes.count > 0 {
+            _noteTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .bottom, animated: true)
+        }
     }
     
     func updateNoteInList(_ note: Note) {
@@ -83,12 +85,12 @@ class NoteListViewController: BaseUIViewController, NoteListViewProtocol {
             title = title.prefix(50) + "..."
         }
         let message = MDCSnackbarMessage()
-        message.text = "Deleted \(title)"
+        message.text = "\(LocalizedString.Deleted) \(title)"
         let action = MDCSnackbarMessageAction()
         action.handler = {
             self.presenter?.didTapUndoDeleteNote(note)
         }
-        action.title = "Undo"
+        action.title = LocalizedString.Undo
         message.action = action
         MDCSnackbarManager.setBottomOffset(50 + view.pin.safeArea.bottom)
         MDCSnackbarManager.show(message)
