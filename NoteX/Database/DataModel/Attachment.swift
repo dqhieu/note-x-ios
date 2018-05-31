@@ -20,25 +20,25 @@ public enum AttachmentType: String {
 public class Attachment: Object {
 
     @objc dynamic fileprivate var _id:          String = ""
-    @objc dynamic fileprivate var _noteId:      String = ""
-    @objc dynamic fileprivate var _type:        String?
-    @objc dynamic fileprivate var _description: String = ""
-    @objc dynamic fileprivate var _resourceId:  String?
-    @objc dynamic fileprivate var _createdAt:   Date?
+    @objc dynamic fileprivate var _noteId:      String?
+    @objc dynamic fileprivate var _type:        String = ""
+    @objc dynamic fileprivate var _description: String?
+    @objc dynamic fileprivate var _resourceId:  String = ""
+    @objc dynamic fileprivate var _createdAt:   Date   = Date()
     
     public var id: String {
         return _id
     }
     
-    public var noteId: String {
+    public var noteId: String? {
         return _noteId
     }
     
-    public var type: AttachmentType? {
-        return AttachmentType(rawValue: _type ?? "undefined")
+    public var type: AttachmentType {
+        return AttachmentType(rawValue: _type) ?? .undefined
     }
     
-    public var descriptionString: String {
+    public var descriptionString: String? {
         return _description
     }
     
@@ -54,11 +54,11 @@ public class Attachment: Object {
         return "_id"
     }
     
-    public init(noteId: String, description: String, type: AttachmentType?) {
+    public init(noteId: String? = nil, description: String? = nil, type: AttachmentType) {
         self._id = UUID().uuidString
         self._noteId = noteId
         self._description = description
-        self._type = type?.rawValue
+        self._type = type.rawValue
         self._createdAt = Date()
         super.init()
     }

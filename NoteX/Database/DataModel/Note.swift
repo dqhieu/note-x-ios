@@ -13,7 +13,7 @@ import RealmSwift
 public class Note: Object {
 
     @objc dynamic fileprivate var _id:            String = ""
-    @objc dynamic fileprivate var _notebookId:    String = ""
+    @objc dynamic fileprivate var _notebookId:    String?
     @objc dynamic fileprivate var _content:       String = ""
     @objc dynamic fileprivate var _createdAt:     Date   = Date()
     @objc dynamic fileprivate var _updatedAt:     Date   = Date()
@@ -22,7 +22,7 @@ public class Note: Object {
         return _id
     }
     
-    public var notebookId: String {
+    public var notebookId: String? {
         return _notebookId
     }
     
@@ -42,7 +42,7 @@ public class Note: Object {
         return "_id"
     }
     
-    public init(notebookId: String, content: String) {
+    public init(notebookId: String? = nil, content: String) {
         self._id = UUID().uuidString
         self._notebookId = notebookId
         self._content = content
