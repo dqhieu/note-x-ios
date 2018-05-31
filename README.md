@@ -3,29 +3,30 @@ NoteX iOS
 ---
 
 ## Release
-- [0.0.1](#001)
-- [0.0.2](#002)
+- [0.0.4](#004)
 - [0.0.3](#003)
+- [0.0.2](#002)
+- [0.0.1](#001)
 
 ---
 
-# 0.0.1
+# 0.0.4
 
-## List notes (Home page)
-- List all current notes
-- Each item have: title, created date and overview. Notice: there is no place to input title, *title* is the first line of the note content (similar to OSX Notes)
-- There is a textbox at the bottom (look like a chat message box), tap to it will open Create note page. (similar to Google Keep mobile app)
-- Tap to item opens note detail page.
+## Fix
+- [x] Update relative time format
+- [x] Title should be first non-empty line
+- [x] Update db model
 
-<img src="https://user-images.githubusercontent.com/4214509/39516306-c44b59ce-4e26-11e8-85ae-750dfb43eaac.png" width="500"> | <img src="https://www.upanhtocdo.com/images/2018/05/29/Screen-Shot-2018-05-29-at-9.41.06-PM.png" width="300">
+---
 
-## Note detail page
-- This page will be used for create/view/edit notes
-- Top page show current date time, this is the note created date. Automatically updated when user edit.
-- Note content: there is only 1 field, no need to enter title and content.
-- No save button, everything entered will be automatically save (could be debounce for 1 seconds or more)
+# 0.0.3
 
-<img src="https://user-images.githubusercontent.com/4214509/39516344-de1085aa-4e26-11e8-8e31-72b413707387.png" width="500"> | <img src="https://www.upanhtocdo.com/images/2018/05/29/Screen-Shot-2018-05-29-at-9.48.11-PM.png" width="300">
+## Fix
+- [x] App crash if there is no note
+- [x] App show "Deleted {nil} [Undo]" if delete a note after creating less than 3 seconds
+
+## Add
+- [x] Localization (multi-language): now supporting English and Vietnamese
 
 ---
 
@@ -46,11 +47,20 @@ NoteX iOS
 
 ---
 
-# 0.0.3
+# 0.0.1
 
-## Fix
-- [x] App crash if there is no note
-- [x] App show "Deleted {nil} [Undo]" if delete a note after creating less than 3 seconds
+## List notes (Home page)
+- List all current notes
+- Each item have: title, created date and overview. Notice: there is no place to input title, *title* is the first line of the note content (similar to OSX Notes)
+- There is a textbox at the bottom (look like a chat message box), tap to it will open Create note page. (similar to Google Keep mobile app)
+- Tap to item opens note detail page.
 
-## Add
-- [x] Localization (multi-language): now supporting English and Vietnamese
+<img src="https://user-images.githubusercontent.com/4214509/39516306-c44b59ce-4e26-11e8-85ae-750dfb43eaac.png" width="500"> | <img src="https://www.upanhtocdo.com/images/2018/05/29/Screen-Shot-2018-05-29-at-9.41.06-PM.png" width="300">
+
+## Note detail page
+- This page will be used for create/view/edit notes
+- Top page show current date time, this is the note created date. Automatically updated when user edit.
+- Note content: there is only 1 field, no need to enter title and content.
+- No save button, everything entered will be automatically save (could be debounce for 1 seconds or more)
+
+<img src="https://user-images.githubusercontent.com/4214509/39516344-de1085aa-4e26-11e8-8e31-72b413707387.png" width="500"> | <img src="https://www.upanhtocdo.com/images/2018/05/29/Screen-Shot-2018-05-29-at-9.48.11-PM.png" width="300">
