@@ -15,4 +15,22 @@ extension String {
         return trimmed.isEmpty
     }
     
+    func firstNonEmptyLine() -> String? {
+        let allLines = components(separatedBy: "\n")
+        for line in allLines {
+            if !line.isBlank() {
+                return line
+            }
+        }
+        return nil
+    }
+    
+    func removeFirstNonEmptyLine() -> String? {
+        var allLines = components(separatedBy: "\n")
+        while let first = allLines.first, first.isBlank() {
+            allLines.removeFirst()
+        }
+        return allLines.dropFirst().joined(separator: " ")
+    }
+    
 }

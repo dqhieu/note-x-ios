@@ -68,11 +68,11 @@ public class Note: Object {
     }
     
     public func getTitle() -> String? {
-        return _content.components(separatedBy: "\n").first
+        return _content.firstNonEmptyLine()
     }
     
     public func getOverview() -> String? {
-        let overview = _content.components(separatedBy: "\n").dropFirst().joined(separator: " ")
+        guard let overview = _content.removeFirstNonEmptyLine() else { return LocalizedString.No_Additional_Text }
         if overview.isBlank() {
             return LocalizedString.No_Additional_Text
         }
