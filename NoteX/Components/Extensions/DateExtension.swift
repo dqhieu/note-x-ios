@@ -40,7 +40,7 @@ public extension Date {
             return "\(Int(timeInterval / 60)) \(LocalizedString.Minutes_Ago)"
         }
         if timeInterval < 2 * 60 * 60 {
-            return LocalizedString.An_Hour_Ago
+            return "\(Int(timeInterval / (60 * 60))) \(LocalizedString.Hour_Ago)"
         }
         if timeInterval < 24 * 60 * 60 {
             return "\(Int(timeInterval / (60 * 60))) \(LocalizedString.Hours_Ago)"

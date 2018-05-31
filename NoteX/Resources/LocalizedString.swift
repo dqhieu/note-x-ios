@@ -18,7 +18,7 @@ public struct LocalizedString {
     public static let Just_Now = NSLocalizedString("Just now", comment: "")
     public static let Minute_Ago = NSLocalizedString("minute ago", comment: "")
     public static let Minutes_Ago = NSLocalizedString("minutes ago", comment: "")
-    public static let An_Hour_Ago = NSLocalizedString("An hour ago", comment: "")
+    public static let Hour_Ago = NSLocalizedString("hour ago", comment: "")
     public static let Hours_Ago = NSLocalizedString("hours ago", comment: "")
     public static let Yesterday = NSLocalizedString("Yesterday", comment: "")
     public static let Undo = NSLocalizedString("Undo", comment: "")
