@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
+
+private let kDatabaseVersion004: UInt64 = 2
 
 class DataManager: NoteDataManagerProtocol, NotebookDataManagerProtocol, AttachmentDataMangerProtocol {
     
@@ -83,6 +87,14 @@ class DataManager: NoteDataManagerProtocol, NotebookDataManagerProtocol, Attachm
     
     func deleteAllAttachmentBelongToNoteId(_ id: String) {
         _attachmentDataManager.deleteAllAttachmentBelongToNoteId(id)
+    }
+    
+}
+
+extension DataManager {
+    
+    static func migrateIfNeeded() {
+        Realm.Configuration.defaultConfiguration.schemaVersion = kDatabaseVersion004
     }
     
 }

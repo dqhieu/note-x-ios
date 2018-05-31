@@ -13,7 +13,7 @@ import RealmSwift
 public class Note: Object {
 
     @objc dynamic fileprivate var _id:            String = ""
-    @objc dynamic fileprivate var _notebookId:    String = ""
+    @objc dynamic fileprivate var _notebookId:    String?
     @objc dynamic fileprivate var _content:       String = ""
     @objc dynamic fileprivate var _createdAt:     Date   = Date()
     @objc dynamic fileprivate var _updatedAt:     Date   = Date()
@@ -22,7 +22,7 @@ public class Note: Object {
         return _id
     }
     
-    public var notebookId: String {
+    public var notebookId: String? {
         return _notebookId
     }
     
@@ -42,7 +42,7 @@ public class Note: Object {
         return "_id"
     }
     
-    public init(notebookId: String, content: String) {
+    public init(notebookId: String? = nil, content: String) {
         self._id = UUID().uuidString
         self._notebookId = notebookId
         self._content = content
@@ -68,11 +68,11 @@ public class Note: Object {
     }
     
     public func getTitle() -> String? {
-        return _content.components(separatedBy: "\n").first
+        return _content.firstNonEmptyLine()
     }
     
     public func getOverview() -> String? {
-        let overview = _content.components(separatedBy: "\n").dropFirst().joined(separator: " ")
+        guard let overview = _content.removeFirstNonEmptyLine() else { return LocalizedString.No_Additional_Text }
         if overview.isBlank() {
             return LocalizedString.No_Additional_Text
         }
