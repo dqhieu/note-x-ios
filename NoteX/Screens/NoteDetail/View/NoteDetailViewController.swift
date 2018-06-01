@@ -47,7 +47,7 @@ class NoteDetailViewController: BaseUIViewController, NoteDetailViewProtocol {
     }
     
     func loadNote(_ note: Note) {
-        self.title = Date().toStringDate()
+        self.title = note.updatedAt.ddMMMyyyyHHmm()
         _txtContent.text = note.content
         if note.content == "" {
             _txtContent.becomeFirstResponder()

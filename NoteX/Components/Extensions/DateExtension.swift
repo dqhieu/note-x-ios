@@ -10,22 +10,25 @@ import Foundation
 
 public extension Date {
     
-    public func toStringShortDate() -> String {
+    public func ddMMMyyyy() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd"
+        dateFormatter.dateFormat = "dd MMM, yyyy"
         dateFormatter.locale = Locale.current
         return dateFormatter.string(from: self)
     }
     
-    public func toStringDate() -> String {
+    public func ddMMMyyyyHHmm() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd, yyyy"
+        dateFormatter.dateFormat = "dd MMM, yyyy HH:mm"
         dateFormatter.locale = Locale.current
         return dateFormatter.string(from: self)
     }
     
-    func dayNumberOfWeek() -> Int? {
-        return Calendar.current.dateComponents([.weekday], from: self).weekday
+    public func dayOfWeek() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        dateFormatter.locale = Locale.current
+        return dateFormatter.string(from: self)
     }
     
     public func timeAgo() -> String {
@@ -48,30 +51,28 @@ public extension Date {
         if timeInterval < 2 * 24 * 60 * 60 {
             return LocalizedString.Yesterday
         }
-        if timeInterval < 8 * 24 * 60 * 60, let weekDay = dayNumberOfWeek() {
-            switch weekDay {
-            case 1:
+        if timeInterval < 8 * 24 * 60 * 60 {
+            switch dayOfWeek() {
+            case "Sunday":
                 return LocalizedString.Sunday
-            case 2:
+            case "Monday":
                 return LocalizedString.Monday
-            case 3:
+            case "Tuesday":
                 return LocalizedString.Tuesday
-            case 4:
+            case "Wednesday":
                 return LocalizedString.Wednesday
-            case 5:
+            case "Thursday":
                 return LocalizedString.Thursday
-            case 6:
+            case "Friday":
                 return LocalizedString.Friday
-            case 7:
+            case "Saturday":
                 return LocalizedString.Saturday
             default:
                 break
             }
         }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM, yyyy"
-        dateFormatter.locale = Locale.current
-        return dateFormatter.string(from: self)
+        
+        return ddMMMyyyy()
     }
     
 }
